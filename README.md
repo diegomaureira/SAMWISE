@@ -18,6 +18,8 @@ In this work, we build upon **Segment Anything 2 (SAM2)** and make it **wiser** 
 💡 **Minimal overhead: just 4.9 M additional parameters!**  
 
 📄 **[Read our paper on arXiv](https://arxiv.org/abs/2411.17646)**
+<br>
+🌍 **[Demo & Project Page](https://claudiacuttano.github.io/SAMWISE/)**  
 
 ## SAMWISE in Action 👀
 <!-- 
