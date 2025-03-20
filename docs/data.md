@@ -1,5 +1,6 @@
 # Data Preparation
 
+Our setup follows [Referformer](https://github.com/wjn922/ReferFormer)
 Create a new directory `data` to store all the datasets.
 
 ## 🖼️ Ref-COCO
