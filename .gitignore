@@ -12,6 +12,6 @@ ign*
 *cmd.txt
 *.pth
 *.sh.o*
-data2
+data
 *pdf
 cmd*

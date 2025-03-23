@@ -112,6 +112,9 @@ class SAMWISE(nn.Module):
                                                                decoder_out_no_mem_cme.masks.detach().cpu(),
                                                                decoder_out_no_mem_cme.object_score_logits.detach()).item()
 
+                            if 'pred_cme_logits' not in outputs:
+                                outputs['pred_cme_logits'] = []
+                                outputs["cme_label"] = []
                             outputs["pred_cme_logits"].append(pred_cme_logits)
                             outputs["cme_label"].append(cme_label)
 
