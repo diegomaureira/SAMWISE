@@ -119,3 +119,15 @@ We build upon the amazing work from:
 - [Segment Anything 2](https://github.com/facebookresearch/sam2)
 - [ReferFormer](https://github.com/wjn922/ReferFormer)
 - [Fairseq](https://github.com/facebookresearch/fairseq)
+
+## Citation
+
+```
+@misc{cuttano2024samwise,
+      title   = {SAMWISE: Infusing wisdom in SAM2 for Text-Driven Video Segmentation},
+      author  = {Claudia Cuttano and Gabriele Trivigno and Gabriele Rosi and Carlo Masone and Giuseppe Averta},
+      year    = {2024},
+      eprint  = {2411.17646},
+      url     = {https://arxiv.org/abs/2411.17646},
+}
+```
