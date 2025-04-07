@@ -3,13 +3,13 @@
 
 # SAMWISE: Infusing Wisdom in SAM2 for Text-Driven Video Segmentation [CVPR 2025]
 
-🎉 **CVPR 2025 Accepted Paper!** 🎉  
+🎉 **CVPR 2025 Highlight** 🎉  
 
 [Claudia Cuttano](), [Gabriele Trivigno](), [Gabriele Rosi](), [Carlo Masone](), [Giuseppe Averta]()
 
 </div>
 
-Welcome to the official repository for **SAMWISE**, our CVPR 2025 paper: *"SAMWISE: Infusing Wisdom in SAM2 for Text-Driven Video Segmentation"*.  
+Welcome to the official repository for *"SAMWISE: Infusing Wisdom in SAM2 for Text-Driven Video Segmentation"*.  
 
 In this work, we build upon **Segment Anything 2 (SAM2)** and make it **wiser** by infusing **natural language understanding** and **explicit temporal modeling**.  
 🚀 **No fine-tuning of SAM2 weights.**  
@@ -124,7 +124,7 @@ We build upon the amazing work from:
 
 ```
 @misc{cuttano2024samwise,
-      title   = {SAMWISE: Infusing wisdom in SAM2 for Text-Driven Video Segmentation},
+      title   = {SAMWISE: Infusing Wisdom in SAM2 for Text-Driven Video Segmentation},
       author  = {Claudia Cuttano and Gabriele Trivigno and Gabriele Rosi and Carlo Masone and Giuseppe Averta},
       year    = {2024},
       eprint  = {2411.17646},
