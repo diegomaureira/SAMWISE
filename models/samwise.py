@@ -286,12 +286,12 @@ class SAMWISE(nn.Module):
 
             vis_outs.append(vis.permute(0, 3, 1, 2))
 
+        txt = txt.permute(1, 0, 2)  # LND -> NLD
         state = txt[:,0]
         if T > 1:
             state = state.repeat_interleave(T, 0)
 
         if self.motion_prompt:
-            txt = txt.permute(1, 0, 2)  # LND -> NLD
             return vis_outs, state, txt
         return vis_outs, state
 
