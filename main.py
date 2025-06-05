@@ -58,13 +58,10 @@ def main(args):
     n_parameters_tot = sum(p.numel() for p in model.parameters())
     print('number of params:', n_parameters_tot)
 
-    backbone = []
     head = []
     fix = []
     for k, v in model_without_ddp.named_parameters():
-        if (k.startswith('backbone') and 'positional_embedding' not in k) and v.requires_grad:
-            backbone.append(v)
-        elif v.requires_grad:
+        if v.requires_grad:
             head.append(v)
         else:
             fix.append(v)
@@ -76,7 +73,6 @@ def main(args):
         'params': head,
         'initial_lr': args.lr
     }]
-
 
     optimizer = torch.optim.AdamW(param_list, lr=args.lr, weight_decay=args.weight_decay)
     lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, args.lr_drop)

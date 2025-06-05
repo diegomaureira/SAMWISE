@@ -470,7 +470,7 @@ def build_samwise(args):
 
     # freeze all the weights except CMT adapter and Conditional Memory Encoder
     for param_name, param in model.named_parameters():
-        if 'adapter' not in param_name and 'conditional_memory_encoder' not in param_name:
+        if 'adapter' not in param_name and 'conditional_memory_encoder' not in param_name and 'project_text' not in param_name:
             param.requires_grad = False
 
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
