@@ -5,7 +5,7 @@
 
 🎉 **CVPR 2025 Highlight** 🎉  
 
-[Claudia Cuttano](), [Gabriele Trivigno](), [Gabriele Rosi](), [Carlo Masone](), [Giuseppe Averta]()
+[Claudia Cuttano](https://scholar.google.it/citations?user=W7lNKNsAAAAJ&hl=en), [Gabriele Trivigno](https://scholar.google.com/citations?user=JXf_iToAAAAJ&hl=en), [Gabriele Rosi](https://scholar.google.com/citations?user=8AfX1GcAAAAJ&hl=en), [Carlo Masone](https://scholar.google.it/citations?user=cM3Iz_4AAAAJ&hl=en), [Giuseppe Averta](https://scholar.google.it/citations?user=i4rm0tYAAAAJ&hl=en)
 
 </div>
 
@@ -19,9 +19,14 @@ In this work, we build upon **Segment Anything 2 (SAM2)** and make it **wiser** 
 
 📄 **[Read our paper on arXiv](https://arxiv.org/abs/2411.17646)**
 <br>
-🌍 **[Demo & Project Page](https://claudiacuttano.github.io/SAMWISE/)**  
+🌍 **[Demo & Project Page](https://claudiacuttano.github.io/SAMWISE/)**   
 
-## SAMWISE in Action 👀
+
+📢 **[May 2025] Check out _SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation_** — a unified framework powered by SAM2, supporting points, boxes, scribbles, and masks. No external models, no prompt-specific tweaks. 👉 **[Checkout SANSA](https://github.com/ClaudiaCuttano/SANSA)**
+
+
+
+## 👀 SAMWISE in Action
 <!-- 
 Our approach integrates natural language knowledge and temporal cues for <b>streaming-based Referring Video Segmentation (RVOS)</b>. We mitigate tracking bias—where the model may overlook an identifiable object while tracking another—through a learnable mechanism. This enables efficient streaming processing, leveraging memory from previous frames to maintain context and ensure accurate object segmentation.
 
@@ -31,9 +36,11 @@ Our approach integrates natural language knowledge and temporal cues for <b>stre
 </p>
 -->
 
-SAMWISE (our model, not the hobbit) segments objects from The Lord of the Rings in zero-shot—no extra training, just living up to its namesake! 🧙‍♂️✨
+SAMWISE (our model, not the hobbit) segments objects from The Lord of the Rings in zero-shot — no extra training, just living up to its namesake! 🧙‍♂️✨
 
-![Local GIF](./assets/video_four_horizzontal.gif)
+https://github.com/user-attachments/assets/b582557e-a41a-4eb1-9069-a88dafd3e546
+
+
 
 ## 📊 Data Preparation  
 Before running SAMWISE, set up your ```dataset```: refer to [data.md](docs/data.md) for detailed data preparation.  
