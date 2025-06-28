@@ -24,7 +24,7 @@ In this work, we build upon **Segment Anything 2 (SAM2)** and make it **wiser** 
 
 📢 **[May 2025] Check out _SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation_** — a unified framework powered by SAM2, supporting points, boxes, scribbles, and masks. No external models, no prompt-specific tweaks. 👉 **[Checkout SANSA](https://github.com/ClaudiaCuttano/SANSA)**
 
-
+📢 **[June 2025] Try SAMWISE on your own data**: we’ve added a simple script to run SAMWISE on  videos or images using textual prompts. 👉 [Try SAMWISE on Your Own Data](#️-try-samwise-on-your-own-data).
 
 ## 👀 SAMWISE in Action
 <!-- 
@@ -141,13 +141,13 @@ python inference_demo.py --input_path assets/example_image.jpg --text_prompts "t
 python inference_demo.py --input_path assets/example_video.mp4 --text_prompts "the horse jumping" "the person riding the horse"
 
 # On a folder of consecutive frames
-python inference_demo.py --input_path frames/demo_sequence --text_prompts "the horse jumping" "the person riding the horse"
+python inference_demo.py --input_path demo_sequence --text_prompts "the horse jumping" "the person riding the horse"
 ```
 
 Output:
 - Image input: 
   - demo_output/<text_prompt>/example_image.png
-- Video or frames: 
+- Video or sequence of frames: 
   - Segmented frames: demo_output/<text_prompt>/frame_*.png
   - Segmented video: demo_output/<text_prompt>.mp4
 
