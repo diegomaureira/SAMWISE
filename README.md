@@ -119,6 +119,37 @@ This document includes all necessary details on:
 ✅ Submitting results to online benchmarks  
 
 
+## ▶️ Try SAMWISE on Your Own Data
+
+We provide a simple script to run SAMWISE on your own inputs using natural language prompts.  
+Supported input types:
+- A single image (.jpg, .png, .jpeg)
+- A video (.mp4)
+- A folder of consecutive video frames (e.g., frame_00001.png, frame_00002.png, ...)
+
+Run the script:
+```
+python inference_demo.py --input_path <your_input> --text_prompts <text_prompt 1> <text_prompt 2>
+```
+
+Examples:
+```
+# On a single image
+python inference_demo.py --input_path assets/example_image.jpg --text_prompts "the dog who is jumping" "the dog on the left" "the person with a yellow jacket"
+
+# On a video
+python inference_demo.py --input_path assets/example_video.mp4 --text_prompts "the horse jumping" "the person riding the horse"
+
+# On a folder of consecutive frames
+python inference_demo.py --input_path frames/demo_sequence --text_prompts "the horse jumping" "the person riding the horse"
+```
+
+Output:
+- Image input: 
+  - demo_output/<text_prompt>/example_image.png
+- Video or frames: 
+  - Segmented frames: demo_output/<text_prompt>/frame_*.png
+  - Segmented video: demo_output/<text_prompt>.mp4
 
 ## 🔗 Acknowledgements
 We build upon the amazing work from:
@@ -130,11 +161,12 @@ We build upon the amazing work from:
 ## Citation
 
 ```
-@misc{cuttano2024samwise,
-      title   = {SAMWISE: Infusing Wisdom in SAM2 for Text-Driven Video Segmentation},
-      author  = {Claudia Cuttano and Gabriele Trivigno and Gabriele Rosi and Carlo Masone and Giuseppe Averta},
-      year    = {2024},
-      eprint  = {2411.17646},
-      url     = {https://arxiv.org/abs/2411.17646},
+@InProceedings{cuttano2025samwise,
+    author    = {Cuttano, Claudia and Trivigno, Gabriele and Rosi, Gabriele and Masone, Carlo and Averta, Giuseppe},
+    title     = {SAMWISE: Infusing Wisdom in SAM2 for Text-Driven Video Segmentation},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {3395-3405}
 }
 ```

@@ -88,3 +88,24 @@ Once pre-trained, you can evaluate the model on a Referring Image Segmentation (
 ```
 python3 main_pretrain.py --eval --resume=[/path/to/model_weight] --name_exp [name_exp] --disable_pred_obj_score 
 ```
+
+
+## ⚡ Multi-GPU Training
+
+All training scripts in this repository support multi-GPU training using `torch.distributed`.
+To enable distributed training, prepend the training command with:
+
+```
+python -m torch.distributed.launch --nproc_per_node=N_GPUS --master_port=FREE_PORT --use_env 
+```
+
+Replace N_GPUS with the desired number of GPUS and FREE_PORT with an available port on your machine (e.g., 1234).
+
+For example, to train on Ref-YouTube-VOS using 4 GPUs:
+
+
+```
+python -m torch.distributed.launch --nproc_per_node=4 --master_port=1234 --use_env main.py --resume=pretrain/pretrained_model.pth --dataset_file ytvos --HSA --use_cme_head --name_exp [name_exp] --epochs 1 --batch_size 4
+```
+
+Make sure to adjust --batch_size appropriately based on your available GPU memory.
