@@ -114,9 +114,9 @@ python3 main_pretrain.py --eval --resume=[/path/to/model_weight] --name_exp [nam
 For step-by-step instructions on training and inference, please refer to the [Training and Inference Guide](docs/training-and-inference.md).
 
 This document includes all necessary details on:  
-✅ Training SAMWISE on different datasets  
-✅ Running inference and evaluating performance  
-✅ Submitting results to online benchmarks  
+- Training SAMWISE on different datasets
+- Running inference and evaluating performance  
+- Submitting results to online benchmarks  
 
 
 ## ▶️ Try SAMWISE on Your Own Data
