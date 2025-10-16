@@ -21,3 +21,5 @@ video_demo
 frames_video_demo
 venv/
 frames*
+
+outputs/

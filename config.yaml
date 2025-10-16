@@ -1,0 +1,77 @@
+# SAMWISE training and inference config
+
+model:
+  # Training hyperparameters
+  lr: 1e-5                # Learning rate for optimizer
+  batch_size: 2           # Batch size for training
+  batch_size_val: 1       # Batch size for RIS evaluation
+  num_frames: 8           # Number of frames per training clip
+  weight_decay: 0         # Weight decay (L2 regularization)
+  epochs: 6               # Number of training epochs
+  lr_drop: [60000]        # Epochs at which learning rate should drop
+  clip_max_norm: 1        # Max norm for gradient clipping
+
+  # Image Encoder: SAM2
+  sam2_version: base      # Version of SAM2 image encoder to use [tiny, base, large]
+  disable_pred_obj_score: false   # Disable predicted object score
+  motion_prompt: false            # Enable motion-based prompting
+
+  # Cross Modal Temporal Adapter settings
+  HSA: false                      # Use Hierarchical Selective Attention (HSA)
+  HSA_patch_size: [8, 4, 2]       # Patch sizes used in HSA
+  adapter_dim: 256                # Dimensionality of adapter layers
+  fusion_stages_txt: [4, 8, 12]   # Text encoder fusion stages
+  fusion_stages: [1, 2, 3]        # Fusion stages
+
+  # Conditional Memory Encoder (CME) settings
+  use_cme_head: false             # Use Conditional Memory Encoder (CME)
+  switch_mem: reweight            # Memory switch strategy [all_mask, reweight, avg]
+  cme_decision_window: 4          # Min frames between consecutive CME decisions
+
+  # dataset settings
+  dataset_file: ytvos             # Dataset to use [ytvos, davis, refcoco, refcoco+, refcocog, all]
+  coco_path: data/coco            # Path to COCO dataset
+  ytvos_path: data/ref-youtube-vos # Path to YouTube-VOS dataset
+  davis_path: data/ref-davis      # Path to DAVIS dataset
+  mevis_path: data/MeViS_release  # Path to MeViS dataset
+  max_size: 1024                  # Frame size for preprocessing
+  augm_resize: false              # Enable data augmentation with random resizing
+
+  # General settings
+  output_dir: output              # Directory to save model outputs
+  name_exp: default               # Experiment name
+  device: cuda                    # Device [cuda, cpu]
+  seed: 0                         # Random seed
+  resume: ""                      # Path to checkpoint
+  resume_optimizer: false         # Resume optimizer state
+  start_epoch: 0                  # Starting epoch
+  eval: false                     # Run eval instead of training (RIS only)
+  num_workers: 4                  # Data loading workers
+  no_distributed: false           # Disable distributed training
+
+  # Testing and evaluation settings
+  threshold: 0.5                  # Threshold for binary mask predictions
+  split: valid                    # Dataset split [valid, valid_u, test]
+  visualize: false                # Enable mask visualization during inference
+  eval_clip_window: 8             # Frame window size for evaluation
+  set: val                        # Subset to evaluate
+  task: unsupervised              # Evaluation task [semi-supervised, unsupervised]
+  results_path:                   # Path to sequences folders results
+  resume: pretrain/final_model_mevis.pth # Path to checkpoint for evaluation
+  #resume: pretrain/final_model_ytvos.pth # Path to checkpoint for evaluation
+  device: cuda                    # Device for evaluation
+  threshold: 0.5                  # Threshold for binary mask predictions
+  eval_clip_window: 8             # Frame window size for evaluation
+  num_workers: 4                  # Data loading workers
+
+inference:
+  input_path: "/home/reite/Reite/milvus/transactions/vCai6dwL1CzXj0bpF1U7_ext_top_1753966112.mp4" # Path to input image or video
+  text_prompts:                                                                          # List of text prompts for segmentation
+    - "the product being moved from inside to outside of fridge" 
+    - "the hand of a person"
+  fps: 10                                                                                # Frame extraction rate for videos
+  image_level: false                                                                     # Set to true for image input
+
+output:
+  path_to_save_frames: outputs/saved_frames                                              # Path to save extracted frames from videos
+  save_path_prefix: outputs/inference_results                                            # Prefix path to save inference results
