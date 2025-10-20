@@ -65,12 +65,23 @@ model:
   num_workers: 4                  # Data loading workers
 
 inference:
-  input_path: "/home/reite/Reite/milvus/transactions/vCai6dwL1CzXj0bpF1U7_ext_top_1753966112.mp4" # Path to input image or video
-  text_prompts:                                                                          # List of text prompts for segmentation
-    - "the product being moved from inside to outside of fridge" 
+  #input_path: "/media/disk/dm_test/sampled_frames/wwCjTUupAGQIXkQzCQQm_ext_top_video_1759914702.mp4_frame_7.jpg" # Path to input image or video
+  input_path: "/media/disk/dm_test/new_transaction/wwCjTUupAGQIXkQzCQQm_ext_top_video_1759914702.mp4" # Path to input image or video
+  text_prompts: 
+    - "a person"
     - "the hand of a person"
-  fps: 10                                                                                # Frame extraction rate for videos
-  image_level: false                                                                     # Set to true for image input
+    - "the object being held by a person"
+    - "the item in the person's hand"
+    - "the thing that the person is holding"  # List of text prompts for segmentation
+    - "the object grasped by a person"
+    - "the article in the person's hand"
+    - "the item being held by a person"
+    - "the thing held by a person"
+    - "the object in a person's hand"
+    - "the article being held by a person"
+    - "the object that a person is holding"
+  fps: 10                                                                               # Frame extraction rate for videos
+  image_level: false                                                         # Set to true for image input
 
 output:
   path_to_save_frames: outputs/saved_frames                                              # Path to save extracted frames from videos

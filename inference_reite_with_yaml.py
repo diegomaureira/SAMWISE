@@ -113,6 +113,7 @@ def inference(model, config, save_path_prefix, input_path, text_prompts, resume_
         for t, frame in enumerate(frames_list):
             img_path = join(frames_folder, frame + ext)
             source_img = Image.open(img_path).convert('RGBA')
+            #print(source_img.size, all_pred_masks[t].shape)
             source_img = vis_add_mask(source_img, all_pred_masks[t], color_list[i % len(color_list)])
             save_visualize_path = join(save_visualize_path_dir, frame + '.png')
             source_img.save(save_visualize_path)

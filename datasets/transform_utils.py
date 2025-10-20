@@ -16,10 +16,17 @@ color_list = color_list.astype('uint8').tolist()
 
 def vis_add_mask(img, mask, color):
     origin_img = np.asarray(img.convert('RGB')).copy()
+    # transpose if needed
+    if mask.shape[0] == origin_img.shape[0] and mask.shape[1] == origin_img.shape[1]:
+        pass
+    else:
+        mask = mask.transpose(1, 0)
     color = np.array(color)
 
     mask = mask.reshape(mask.shape[0], mask.shape[1]).astype('uint8') # np
     mask = mask > 0.5
+    
+    #print(mask.shape, origin_img.shape)
 
     origin_img[mask] = origin_img[mask] * 0.25 + color * 0.75
     origin_img = Image.fromarray(origin_img)
