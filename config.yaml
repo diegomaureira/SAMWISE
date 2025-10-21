@@ -57,8 +57,9 @@ model:
   set: val                        # Subset to evaluate
   task: unsupervised              # Evaluation task [semi-supervised, unsupervised]
   results_path:                   # Path to sequences folders results
-  resume: pretrain/final_model_mevis.pth # Path to checkpoint for evaluation
+  #resume: pretrain/final_model_mevis.pth # Path to checkpoint for evaluation
   #resume: pretrain/final_model_ytvos.pth # Path to checkpoint for evaluation
+  resume: pretrain/pretrained_model.pth
   device: cuda                    # Device for evaluation
   threshold: 0.5                  # Threshold for binary mask predictions
   eval_clip_window: 8             # Frame window size for evaluation
@@ -66,22 +67,18 @@ model:
 
 inference:
   #input_path: "/media/disk/dm_test/sampled_frames/wwCjTUupAGQIXkQzCQQm_ext_top_video_1759914702.mp4_frame_7.jpg" # Path to input image or video
-  input_path: "/media/disk/dm_test/new_transaction/wwCjTUupAGQIXkQzCQQm_ext_top_video_1759914702.mp4" # Path to input image or video
+  input_path: "/media/disk/dm_test/crops/crop_wwCjTUupAGQIXkQzCQQm_ext_top_video_1759914702_frame_11.jpg"
+  #input_path: "/media/disk/dm_test/new_transaction/wwCjTUupAGQIXkQzCQQm_ext_top_video_1759914702.mp4" # Path to input image or video
   text_prompts: 
-    - "a person"
-    - "the hand of a person"
-    - "the object being held by a person"
-    - "the item in the person's hand"
-    - "the thing that the person is holding"  # List of text prompts for segmentation
-    - "the object grasped by a person"
-    - "the article in the person's hand"
-    - "the item being held by a person"
-    - "the thing held by a person"
-    - "the object in a person's hand"
-    - "the article being held by a person"
-    - "the object that a person is holding"
+    - "The hands of the person."
+    - "The person."
+    - "The object that is being taken from the fridge."
+    - "The small object being moved."
+    - "The manipulated object."
+    - "The object being moved."
+    - "The cellphone."
   fps: 10                                                                               # Frame extraction rate for videos
-  image_level: false                                                         # Set to true for image input
+  image_level: true                                                       # Set to true for image input
 
 output:
   path_to_save_frames: outputs/saved_frames                                              # Path to save extracted frames from videos
